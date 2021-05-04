@@ -37,6 +37,12 @@ public class NBodySimulation : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        // Try to fix WebGL build bug where planets don't respond to the sun initially
+        UpdateSunMass(0.5f);
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
